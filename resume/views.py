@@ -30,6 +30,7 @@ class ProfileView(View):
     def post(self, request, *args, **kwargs):
         
         Contact.objects.create(ur_name = request.POST['ur_name'], email_id = request.POST['email_id'], subject = request.POST['subject'], message = request.POST['message'])
+        messages.success(request, "Submitted Successfully...!!!!")
         # return HttpResponseRedirect('profile')
         return redirect('profile')
         
